@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+body {
+    background-color: #010f1f;
+}
+.container {
+
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h2 {
+    color: #fff;
+    font-family: Arial;
+}
+.movie__search {
+    margin-left: 20px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 4px;
+    width: 200px;
+    border: none;
+    color: #fff;
+    background-color: #342463;
+}
+.movie__search:focus {
+    outline: none;
+}
