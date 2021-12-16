@@ -1,6 +1,5 @@
-const inputField = document.querySelector('.movie__search').value;
-
-const API_URL = `https://www.omdbapi.com/?s=harry&apikey=19ec95fc`;
+const searchMovie = document.querySelector('.movie__search').value;
+const boxes = document.querySelector('main');
 
 const loadMovies = (searchMovie) => {
     fetch(`https://www.omdbapi.com/?s=${searchMovie}&apikey=19ec95fc`)
@@ -10,6 +9,7 @@ const loadMovies = (searchMovie) => {
                 throw new Error(`Status Code Error: ${response.status}`);
             response.json()
             .then((data => {
+                    console.log(data);
                     showMovies(data.Search);
             }));
         })
@@ -21,7 +21,15 @@ const loadMovies = (searchMovie) => {
 }
 const showMovies = (movies) => {
         for(let movie of movies) {
-            console.log(movie.Title);
+            const {Title, Year, Poster } = movie;
+            const movieBox = document.createElement('div');
+            movieBox.classList.add('box');
+            boxes.appendChild(movieBox);
+            movieBox.innerHTML = `
+            <img src="${Poster}"/>
+                <div class="box__description">
+                    <p>${Title} (${Year})</p>
+                </div>`;
         }
 }
-loadMovies('harry');
+loadMovies('fast');
