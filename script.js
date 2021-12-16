@@ -1,5 +1,14 @@
-const searchMovie = document.querySelector('.movie__search').value;
+const inputField = document.querySelector('.movie__search');
 const boxes = document.querySelector('main');
+
+inputField.addEventListener('keyup', (e) => {
+    e.preventDefault;
+    if(e.keyCode === 13) {
+        const searchMovie = inputField.value;
+        boxes.innerHTML = '';
+        loadMovies(searchMovie);
+    }
+});
 
 const loadMovies = (searchMovie) => {
     fetch(`https://www.omdbapi.com/?s=${searchMovie}&apikey=19ec95fc`)
@@ -32,4 +41,3 @@ const showMovies = (movies) => {
                 </div>`;
         }
 }
-loadMovies('fast');
