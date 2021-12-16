@@ -38,13 +38,12 @@ const showMovies = (movies) => {
                 movieSelected(imdbID);
             });*/
             movieBox.innerHTML = `
-            <div>
             <img src="${Poster}"/>
+                <p>${Title} (${Year})</p>
                 <div class="box__description">
-                    <p>${Title} (${Year})</p>
-                    <a onClick="movieSelected('${imdbID}')">ABOUT</a>
+                    <a class="about" onClick="movieSelected('${imdbID}')">ABOUT</a>
                 </div>
-            </div>`;
+                `;
         });
 }
 const movieSelected = (imdbID) => {
@@ -56,22 +55,21 @@ const movieSelected = (imdbID) => {
             response.json()
             .then((data => {
                     console.log(data);
-                    let { Poster, Title, Released, Rated, Genre, imdbRating, Director } = data;
+                    let { Poster, Title, Released, BoxOffice, Genre, imdbRating, Actors } = data;
                     aboutUs.style.display = 'block';
+
+
                     let card = document.createElement('div');
                     card.classList.add('about__movie__card');
                     aboutUs.appendChild(card);
-                    card.innerHTML = `
-                    <img src="${Poster}" width="200px">
-                    <div class="about__movie_desc">
-                        <h3>${Title}</h3>
-                        <p><strong>Released:</strong>${Released}</p>
-                        <p><strong>Rating:</strong>${Rated}</p>
-                        <p><strong>Genre:</strong>${Genre}</p>
-                        <p><strong>IMDb Rating:</strong>${imdbRating}</p>
-                        <p><strong>Director:</strong>${Director}</p>
-                    </div>
-                    <button id="close" onCLick="closeWindow();"><i class="fas fa-times"></i></button>`;
+                    
+                    document.querySelector('#Poster').src = ` ${Poster}`;
+                    document.querySelector('#movie_name').innerHTML = ` ${Title}`;
+                    document.querySelector('#movie_released').innerHTML = ` ${Released}`;
+                    document.querySelector('#movie_boxOffice').innerHTML = ` ${BoxOffice}`;
+                    document.querySelector('#movie_imdb').innerHTML = ` ${imdbRating}`;
+                    document.querySelector('#movie_genre').innerHTML = ` ${Genre}`;
+                    document.querySelector('#movie_actors').innerHTML = ` ${Actors}`;
             }));
         })
         .catch((err) => {
@@ -82,5 +80,4 @@ const movieSelected = (imdbID) => {
 const closeWindow = () => {
         aboutUs.style.display = 'none';
         const card = document.querySelector('.card');
-        aboutUs.removeChild(card);
 }

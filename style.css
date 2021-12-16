@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 * {
     box-sizing: border-box;
     padding: 0;
@@ -10,14 +11,40 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin-top: 50px;
 }
-header h2 {
+.header__logo h1 {
+    font-size: 50px;
+    color: tomato;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+}
+.header__logo p {
+    margin-top: -45px;
+    font-size: 15px;
     color: #fff;
+    text-align: center;
+    padding: 0;
     font-family: Arial;
 }
-h2 a {
+.header__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
+    
+}
+.header__search span {
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    margin-right: -5px;
+    border-radius: 4px;
+    line-height: 40px;
+    text-transform: uppercase;
+    background-color: tomato;
 }
 main {
     width: 90%;
@@ -27,7 +54,6 @@ main {
     flex-wrap: wrap;
 }
 .movie__search {
-    margin-left: 20px;
     height: 40px;
     padding: 4px;
     border-radius: 4px;
@@ -41,7 +67,7 @@ main {
     outline: none;
 }
 .about__movie {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     left: 0;
     right: 0;
@@ -53,17 +79,20 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: rgba(36, 22, 53, 0.8);
     width: 600px;
     position: relative;
     top: 200;
     margin: 0 auto;
+    color: #fff;
 }
 .about__movie__card button{
     height: 20px;
     width: 20px;
     float: right;
-    background-color: tomato;
+    background-color: rgba(185, 15, 15, 0.8);
+    color: #fff;
+    font-size: 20px;
     border: none;
     cursor: pointer;
 }
@@ -77,6 +106,7 @@ main {
     -webkit-box-shadow: 0px 0px 15px 0px #000000; 
     box-shadow: 0px 0px 15px 0px #000000;
     cursor: pointer;
+    align-self: start;
 }
 .box img {
     object-fit: cover;
@@ -84,7 +114,15 @@ main {
 }
 .box p {
     overflow-wrap: break-word;
-    padding: 0;
+    position: absolute;
+    padding: 5px 0;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(36, 22, 53, 0.8);
+    color: #fff;
+    width: 100%;
 }
 .box__description {
     display: flex;
@@ -95,6 +133,10 @@ main {
     font-family: Arial;
     font-size: 14px;
 }
+.box__description p {
+    height: auto;
+    z-index: 100;
+}
 .box__readMore {
     width: 100%;
     padding: 7px 0;
@@ -103,4 +145,16 @@ main {
     border: none;
     cursor: pointer;
     border-radius: 0 0 4px 4px;
+}
+.about__movie_desc {
+    padding: 10px;
+}
+.about {
+    background-color: tomato;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
