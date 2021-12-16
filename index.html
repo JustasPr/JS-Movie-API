@@ -4,16 +4,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/5599da2de4.js" crossorigin="anonymous"></script>
     <title>Movie APP</title>
 </head>
 <body>
     <div class="container">
         <header>
             <h2>Find a movie!</h2>
-            <input class="movie__search" type="text" placeholder="Search..">
+            <form">
+                <input class="movie__search" type="text" placeholder="Search..">
+            </form>
         </header>
+
         <main>
         </main>
+        <div class="about__movie">
+            <div class="about__movie__card">
+                <img src="https://upload.wikimedia.org/wikipedia/lt/9/9e/Poteris_paslapciu_kambarys_filmas.jpg" width="200px">
+                <div class="about__movie_desc">
+                    <h3>Movie Name</strong></h3>
+                    <p><strong>Released:</strong></p>
+                    <p><strong>Rating:</strong></p>
+                    <p><strong>Genre:</strong></p>
+                    <p><strong>IMDb Rating:</strong></p>
+                    <p><strong>Director:</strong></p>
+                </div>
+                <button id="close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
