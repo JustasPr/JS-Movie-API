@@ -15,6 +15,7 @@ const loadMovies = (searchMovie) => {
     fetch(`https://www.omdbapi.com/?s=${searchMovie}&apikey=19ec95fc`)
     .then(response => 
         {
+            console.log(response.ok);
             if(!response.ok)
                 throw new Error(`Status Code Error: ${response.status}`);
             response.json()
@@ -29,6 +30,10 @@ const loadMovies = (searchMovie) => {
         })
 }
 const showMovies = (movies) => {
+    if(movies === undefined)
+    {
+        alert('Movie doesnt exist');
+    } else {
         movies.forEach((movie, index) => {
             const {Title, Year, Poster, imdbID} = movie;
             const movieBox = document.createElement('div');
@@ -45,6 +50,7 @@ const showMovies = (movies) => {
                 </div>
                 `;
         });
+    }
 }
 const movieSelected = (imdbID) => {
     fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=19ec95fc`)
