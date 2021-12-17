@@ -47,23 +47,6 @@ const showMovies = (movies) => {
                 </div>
                 `;
         });
-        /*if(Poster === "N/A") {
-            movieBox.innerHTML = `
-            <img src="images/na.jpeg" width="100%"/>
-                <p>${Title} (${Year})</p>
-                <div class="box__description">
-                    <a class="about" onClick="movieSelected('${imdbID}')">ABOUT</a>
-                </div>
-                `;
-        } else {
-            movieBox.innerHTML = `
-            <img src="${Poster}"/>
-                <p>${Title} (${Year})</p>
-                <div class="box__description">
-                    <a class="about" onClick="movieSelected('${imdbID}')">ABOUT</a>
-                </div>
-                `;
-        }*/
     }
 }
 const movieSelected = (imdbID) => {
