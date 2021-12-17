@@ -7,6 +7,10 @@
 body {
     background-color: #202020;
 }
+.container {
+    width: 90%;
+    margin: auto;
+}
 header {
     display: flex;
     justify-content: center;
@@ -47,7 +51,6 @@ header {
     background-color: tomato;
 }
 main {
-    width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -80,13 +83,13 @@ main {
     flex-direction: row;
     justify-content: space-between;
     background-color: rgba(36, 22, 53, 0.8);
-    width: 600px;
+    max-width: 600px;
     position: relative;
     top: 200;
     margin: 0 auto;
     color: #fff;
 }
-.about__movie__card button{
+.about__movie__card button {
     height: 20px;
     width: 20px;
     float: right;
@@ -157,4 +160,12 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
+}
+#Poster {
+    width: 150px;
+}
+@media only screen and (max-width: 70px) {
+    .about__movie__card {
+      width: 100%;
+    }
 }

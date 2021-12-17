@@ -57,15 +57,16 @@ const movieSelected = (imdbID) => {
                 throw new Error(`Status Code Error: ${response.status}`);
             response.json()
             .then((data => {
-                    console.log(data);
                     let { Poster, Title, Released, BoxOffice, Genre, imdbRating, Actors } = data;
                     aboutUs.style.display = 'block';
 
 
                     let card = document.createElement('div');
+                    let btn = document.createElement('button');
+
                     card.classList.add('about__movie__card');
                     aboutUs.appendChild(card);
-                    
+                
                     document.querySelector('#Poster').src = ` ${Poster}`;
                     document.querySelector('#movie_name').innerHTML = ` ${Title}`;
                     document.querySelector('#movie_released').innerHTML = ` ${Released}`;
@@ -73,6 +74,7 @@ const movieSelected = (imdbID) => {
                     document.querySelector('#movie_imdb').innerHTML = ` ${imdbRating}`;
                     document.querySelector('#movie_genre').innerHTML = ` ${Genre}`;
                     document.querySelector('#movie_actors').innerHTML = ` ${Actors}`;
+
             }));
         })
         .catch((err) => {
