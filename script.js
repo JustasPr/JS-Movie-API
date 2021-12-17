@@ -15,12 +15,10 @@ const loadMovies = (searchMovie) => {
     fetch(`https://www.omdbapi.com/?s=${searchMovie}&apikey=19ec95fc`)
     .then(response => 
         {
-            console.log(response.ok);
             if(!response.ok)
                 throw new Error(`Status Code Error: ${response.status}`);
             response.json()
             .then((data => {
-                    console.log(data);
                     showMovies(data.Search);
             }));
         })
@@ -39,9 +37,25 @@ const showMovies = (movies) => {
             const movieBox = document.createElement('div');
             movieBox.classList.add('box');
             boxes.appendChild(movieBox);
-            /*document.querySelector('.box').addEventListener('click', (imdbID) => {
-                movieSelected(imdbID);
-            });*/
+
+            let imgPoster = Poster === 'N/A' ? 'images/na.jpeg' : Poster;
+            movieBox.innerHTML = `
+            <img src="${imgPoster}" width="100%"/>
+                <p>${Title} (${Year})</p>
+                <div class="box__description">
+                    <a class="about" onClick="movieSelected('${imdbID}')">ABOUT</a>
+                </div>
+                `;
+        });
+        /*if(Poster === "N/A") {
+            movieBox.innerHTML = `
+            <img src="images/na.jpeg" width="100%"/>
+                <p>${Title} (${Year})</p>
+                <div class="box__description">
+                    <a class="about" onClick="movieSelected('${imdbID}')">ABOUT</a>
+                </div>
+                `;
+        } else {
             movieBox.innerHTML = `
             <img src="${Poster}"/>
                 <p>${Title} (${Year})</p>
@@ -49,7 +63,7 @@ const showMovies = (movies) => {
                     <a class="about" onClick="movieSelected('${imdbID}')">ABOUT</a>
                 </div>
                 `;
-        });
+        }*/
     }
 }
 const movieSelected = (imdbID) => {
