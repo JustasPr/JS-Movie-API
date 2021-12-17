@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bebas+Neue&display=swap');
 * {
     box-sizing: border-box;
     padding: 0;
@@ -22,10 +22,10 @@ header {
     font-size: 50px;
     color: tomato;
     padding: 0;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Amatic SC', cursive;
 }
 .header__logo p {
-    margin-top: -45px;
+    margin-top: -40px;
     font-size: 15px;
     color: #fff;
     text-align: center;
@@ -64,7 +64,7 @@ main {
     font-size: 16px;
     border: none;
     color: rgb(41, 38, 38);
-    background-color: #e0dee6;
+    background-color: #fff;
 }
 .movie__search:focus {
     outline: none;
