@@ -32,7 +32,7 @@ const showMovies = (movies) => {
     {
         alert('Movie doesnt exist');
     } else {
-        movies.forEach((movie, index) => {
+        movies.forEach((movie) => {
             const {Title, Year, Poster, imdbID} = movie;
             const movieBox = document.createElement('div');
             movieBox.classList.add('box');
@@ -40,11 +40,8 @@ const showMovies = (movies) => {
 
             let imgPoster = Poster === 'N/A' ? 'images/na.jpeg' : Poster;
             movieBox.innerHTML = `
-            <img src="${imgPoster}" width="100%"/>
+            <img src="${imgPoster}" width="100%"/ alt="${Title}" onClick="movieSelected('${imdbID}')">
                 <p>${Title} (${Year})</p>
-                <div class="box__description">
-                    <a class="about" onClick="movieSelected('${imdbID}')">ABOUT</a>
-                </div>
                 `;
         });
     }
