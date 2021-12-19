@@ -22,6 +22,7 @@ header {
     font-size: 50px;
     color: tomato;
     padding: 0;
+    text-align: center;
     font-family: 'Amatic SC', cursive;
 }
 .header__logo p {
@@ -165,8 +166,21 @@ main {
 #Poster {
     width: 150px;
 }
-@media only screen and (max-width: 70px) {
+@media only screen and (max-width: 400px) {
     .about__movie__card {
-      width: 100%;
+      flex-direction: column;
+    }
+    #Poster {
+        margin: 0 auto;
+    }
+    #close {
+        position: absolute;
+        right: 0;
+    }
+    .about__movie_desc {
+        text-align: center;
+    }
+    .header__search {
+        width: 100%;
     }
 }
